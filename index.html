@@ -4,188 +4,201 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Thungy Brush® — Brush. Scrape. Exfoliate.</title>
-<meta name="description" content="The patented 3-in-1 toothbrush with tongue scraper and exfoliator. 4-Pack $24.99 with free shipping — mix &amp; match 11 colors, including Glow-in-the-Dark.">
+<meta name="description" content="The patented 3-in-1 toothbrush. 4-Pack $24.99, free shipping — 11 colors including the Glow-in-the-Dark collection.">
 <style>
-/* ── Thungy Brush direct-response page. One job: convert TikTok taps into checkouts.
-   The product's superpower only exists in the dark — so the page lives there. ── */
+/* ── THUNGY v3 — art-directed, typography-led. The product floats; the page glows.
+   One job: TikTok tap → checkout. Every section answers "why buy right now". ── */
 :root{
-  --ink:#04060a; --panel:rgba(255,255,255,.035); --line:rgba(140,180,220,.14);
-  --text:#eef4fa; --dim:#9aa8b8;
-  --cyan:#3ee9ff; --gold:#ffc832; --violet:#c86bff;
-  --cta:#3ee9ff; --cta-ink:#03191d;
+  --ink:#030509; --glass:rgba(160,200,255,.045); --line:rgba(150,190,230,.13);
+  --text:#f2f6fb; --dim:#96a4b4; --faint:#5f6c7c;
+  --cyan:#3ee9ff; --gold:#ffc832; --violet:#b46bff;
+  --cta:#3ee9ff; --cta-ink:#02181c;
 }
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
-body{background:var(--ink);color:var(--text);position:relative;font-family:-apple-system,'Helvetica Neue',Segoe UI,Roboto,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
-img{max-width:100%;display:block}
-.wrap{max-width:520px;margin:0 auto;padding:0 18px}
-.disp{font-family:'Avenir Next Condensed','Arial Narrow',-apple-system,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.02em;line-height:1.04;text-wrap:balance}
-.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);font-weight:600}
-section{padding:44px 0}
-h2.disp{font-size:34px;margin-bottom:16px}
-/* ATMOSPHERE — the page glows like the product */
+body{background:var(--ink);color:var(--text);font-family:-apple-system,'Helvetica Neue',Segoe UI,Roboto,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
 body::before{content:"";position:fixed;inset:0;z-index:-1;background:
- radial-gradient(60% 40% at 15% 8%,rgba(62,233,255,.10),transparent 60%),
- radial-gradient(50% 35% at 85% 30%,rgba(200,107,255,.09),transparent 60%),
- radial-gradient(55% 40% at 50% 90%,rgba(255,200,50,.06),transparent 60%),
- var(--ink)}
-.bleed{margin-left:calc(50% - 50vw);margin-right:calc(50% - 50vw)}
-/* HERO */
-.hero{position:relative;padding:0 0 40px}
-.hero .img{position:relative}
-.hero .img img{width:100%;max-height:72vh;object-fit:cover;border-radius:0}
-.hero .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(4,6,10,.10) 0%,rgba(4,6,10,0) 30%,rgba(4,6,10,.97) 97%)}
-.hero .copy{position:relative;margin-top:-110px;text-align:center;z-index:2}
-.hero h1{font-size:52px;background:linear-gradient(92deg,var(--cyan),#bff6ff 45%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(62,233,255,.35))}
-.hero .sub{font-size:19px;color:var(--text);font-weight:600;margin-top:10px}
-.hero .colors-line{margin-top:10px;color:var(--dim);font-size:14.5px}
-.hero .colors-line b{color:var(--gold)}
-.hero .offer-line{margin-top:8px;font-size:15px;font-weight:700;color:var(--cyan)}
-.patent-chip{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:12px;letter-spacing:.08em;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
-.patent-chip span{color:var(--gold)}
+ radial-gradient(55% 38% at 20% 6%,rgba(62,233,255,.09),transparent 62%),
+ radial-gradient(45% 32% at 88% 24%,rgba(180,107,255,.08),transparent 60%),
+ radial-gradient(50% 36% at 50% 92%,rgba(255,200,50,.05),transparent 62%),var(--ink)}
+img{max-width:100%;display:block}
+.wrap{max-width:520px;margin:0 auto;padding:0 22px}
+.disp{font-family:'Avenir Next Condensed','Arial Narrow',-apple-system,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.015em;line-height:.98;text-wrap:balance}
+.eyebrow{font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--faint);font-weight:700}
+section{padding:64px 0}
+h2.disp{font-size:38px;margin:10px 0 14px}
+/* ── HERO: the product, floating ── */
+.hero{min-height:96svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:24px 0 28px;text-align:center}
+.stage{position:relative;height:44svh;min-height:290px;display:flex;justify-content:center;align-items:center}
+.stage .halo{position:absolute;width:330px;height:330px;border-radius:50%;background:radial-gradient(circle,rgba(62,233,255,.22),rgba(62,233,255,.05) 55%,transparent 72%);filter:blur(6px)}
+.stage img{height:100%;width:auto;object-fit:contain;position:relative;
+ -webkit-mask-image:radial-gradient(70% 62% at 50% 50%,#000 58%,transparent 82%);
+ mask-image:radial-gradient(70% 62% at 50% 50%,#000 58%,transparent 82%)}
+.hero h1{font-size:56px;background:linear-gradient(94deg,var(--cyan) 8%,#d8f8ff 48%,var(--violet) 95%);-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 22px rgba(62,233,255,.3))}
+.hero .sub{font-size:20px;font-weight:700;margin-top:12px}
+.hero .line2{margin-top:8px;color:var(--dim);font-size:14.5px}
+.hero .line2 b{color:var(--gold);font-weight:700}
+.hero .offer{margin-top:14px;font-size:15px;font-weight:800;letter-spacing:.06em;color:var(--cyan);text-transform:uppercase}
+.chips{display:flex;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap}
+.mini{font-size:11px;letter-spacing:.1em;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:6px 12px;text-transform:uppercase}
+.mini b{color:var(--gold)}
 /* CTA */
-.cta{display:block;text-align:center;background:var(--cta);color:var(--cta-ink);font-weight:800;font-size:18px;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;border-radius:14px;padding:17px 20px;margin:22px auto 0;max-width:340px;box-shadow:0 0 28px rgba(62,233,255,.35),0 4px 14px rgba(0,0,0,.5)}
+.cta{display:block;text-align:center;background:var(--cta);color:var(--cta-ink);font-weight:800;font-size:17.5px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border-radius:999px;padding:18px 20px;margin:20px auto 0;max-width:330px;box-shadow:0 0 34px rgba(62,233,255,.4),0 6px 18px rgba(0,0,0,.5)}
 .cta:active{transform:translateY(1px)}
-/* SOCIAL PROOF */
-.proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;text-align:center}
-.stars{color:var(--gold);font-size:18px;letter-spacing:3px}
-.proof p{color:var(--dim);font-size:14.5px;max-width:44ch;margin:8px auto 0}
-/* STEPS */
-.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
-.step{background:var(--panel);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:18px;padding:16px 10px;text-align:center}
-.step .n{font-size:12px;color:var(--dim);letter-spacing:.18em}
-.step .t{font-family:'Avenir Next Condensed','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;font-size:17px;margin-top:4px}
-.step:nth-child(1) .t{color:var(--cyan)} .step:nth-child(2) .t{color:var(--gold)} .step:nth-child(3) .t{color:var(--violet)}
-.step p{font-size:12.5px;color:var(--dim);margin-top:5px;line-height:1.4}
-/* BENEFITS */
-.benefits h2 em{font-style:normal;color:var(--violet)}
-.blist{display:flex;flex-direction:column;gap:12px;margin-top:16px}
-.b{background:var(--panel);backdrop-filter:blur(8px);border:1px solid var(--line);border-radius:18px;padding:15px 16px;display:flex;gap:12px;align-items:flex-start}
-.b .dot{flex:none;width:10px;height:10px;border-radius:50%;margin-top:7px}
-.b:nth-child(odd) .dot{background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
-.b:nth-child(even) .dot{background:var(--gold);box-shadow:0 0 10px var(--gold)}
-.b b{display:block;font-size:15.5px}
-.b p{font-size:13.5px;color:var(--dim);line-height:1.45}
-figure.shot{margin-top:22px}
-figure.shot img{border-radius:20px;box-shadow:0 18px 50px rgba(0,0,0,.55)}
-figure.shot figcaption{font-size:12px;color:var(--dim);text-align:center;margin-top:8px;letter-spacing:.06em}
-/* OFFERS */
-.offer{position:relative;border:1.5px solid var(--line);border-radius:22px;padding:22px 18px 20px;background:var(--panel);backdrop-filter:blur(10px);cursor:pointer}
+/* ── GLOW COLLECTION: the hero product ── */
+.glowsec{position:relative;text-align:center;padding:72px 0}
+.glowsec::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 55% at 50% 45%,rgba(62,233,255,.06),transparent 70%)}
+.trio{display:flex;justify-content:center;align-items:flex-end;gap:4vw;margin:26px 0 8px;position:relative}
+.trio figure{position:relative;width:26%;max-width:150px}
+.trio img{width:100%;
+ -webkit-mask-image:radial-gradient(75% 66% at 50% 48%,#000 55%,transparent 84%);
+ mask-image:radial-gradient(75% 66% at 50% 48%,#000 55%,transparent 84%)}
+.trio figure::after{content:"";position:absolute;left:12%;right:12%;bottom:-10px;height:16px;border-radius:50%;background:radial-gradient(ellipse,rgba(120,200,255,.25),transparent 70%);filter:blur(4px)}
+.trio figcaption{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:14px}
+.trio .p figcaption{color:var(--violet)} .trio .g figcaption{color:var(--gold)} .trio .c figcaption{color:var(--cyan)}
+.kids{display:inline-block;margin-top:18px;font-size:13px;font-weight:800;letter-spacing:.14em;color:#ff8fc6;text-transform:uppercase}
+.glowsec .why{color:var(--dim);font-size:15px;max-width:38ch;margin:14px auto 0}
+.glowsec .why b{color:var(--text)}
+/* ── 3-in-1, typographic ── */
+.tool{border-top:1px solid var(--line);padding:22px 0;display:grid;grid-template-columns:64px 1fr;gap:16px;align-items:baseline}
+.tool:last-of-type{border-bottom:1px solid var(--line)}
+.tool .no{font-family:'Avenir Next Condensed','Arial Narrow',sans-serif;font-size:44px;font-weight:800;line-height:1}
+.tool:nth-of-type(1) .no{color:var(--cyan)} .tool:nth-of-type(2) .no{color:var(--gold)} .tool:nth-of-type(3) .no{color:var(--violet)}
+.tool h3{font-size:19px;font-weight:800;text-transform:uppercase;letter-spacing:.04em}
+.tool p{color:var(--dim);font-size:14px;margin-top:4px;max-width:46ch}
+.whyline{margin-top:22px;color:var(--faint);font-size:13px;letter-spacing:.05em;text-align:center}
+/* ── PRICE AS DESIGN ── */
+.pricesec{text-align:center;position:relative}
+.pricesec::before{content:"";position:absolute;inset:20% 0;background:radial-gradient(60% 70% at 50% 50%,rgba(255,200,50,.07),transparent 70%)}
+.bigprice{font-family:'Avenir Next Condensed','Arial Narrow',sans-serif;font-size:96px;font-weight:800;color:var(--gold);line-height:1;filter:drop-shadow(0 0 30px rgba(255,200,50,.25));font-variant-numeric:tabular-nums;position:relative}
+.bigprice sup{font-size:38px;vertical-align:super}
+.pricemeta{font-size:17px;font-weight:700;margin-top:6px}
+.pricemath{color:var(--dim);font-size:14px;margin-top:6px}
+.pricemath b{color:var(--text)}
+.freeship{display:inline-block;margin-top:12px;background:rgba(255,200,50,.12);border:1px solid rgba(255,200,50,.4);color:var(--gold);font-size:12px;font-weight:800;letter-spacing:.16em;border-radius:999px;padding:7px 16px;text-transform:uppercase}
+/* ── OFFERS ── */
+.offer{position:relative;border:1.5px solid var(--line);border-radius:24px;padding:22px 18px 20px;background:var(--glass);backdrop-filter:blur(10px);cursor:pointer}
 .offer+.offer{margin-top:14px}
-.offer.primary{border-color:rgba(255,200,50,.6);box-shadow:0 0 40px rgba(255,200,50,.14),inset 0 0 30px rgba(255,200,50,.04)}
-.offer .ribbon{position:absolute;top:-11px;left:16px;background:var(--gold);color:#2a1c00;font-size:10.5px;font-weight:800;letter-spacing:.1em;border-radius:999px;padding:3px 11px}
-.offer.sel{border-color:var(--cyan);box-shadow:0 0 0 1.5px var(--cyan),0 0 20px rgba(62,233,255,.18)}
+.offer.primary{border-color:rgba(255,200,50,.55);box-shadow:0 0 44px rgba(255,200,50,.13),inset 0 0 34px rgba(255,200,50,.04)}
+.offer .ribbon{position:absolute;top:-11px;left:18px;background:var(--gold);color:#2a1c00;font-size:10.5px;font-weight:800;letter-spacing:.1em;border-radius:999px;padding:3px 12px}
+.offer.sel{border-color:var(--cyan);box-shadow:0 0 0 1.5px var(--cyan),0 0 26px rgba(62,233,255,.2)}
 .offer .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
 .offer .on{font-weight:800;font-size:17px}
-.offer .op{font-size:24px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap}
+.offer .op{font-size:25px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap}
 .offer .od{font-size:13px;color:var(--dim);margin-top:5px;line-height:1.45}
 .offer .od b{color:var(--cyan)}
-/* PACK BUILDER */
-.builder{margin-top:20px;border:1px solid var(--line);border-radius:24px;background:rgba(4,7,12,.75);backdrop-filter:blur(10px);padding:18px 14px}
-.builder h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-align:center}
-.slots{text-align:center;font-size:14px;margin-top:8px;color:var(--text)}
+/* ── BUILDER ── */
+.builder{margin-top:20px;border:1px solid var(--line);border-radius:26px;background:rgba(3,6,11,.78);backdrop-filter:blur(12px);padding:20px 16px}
+.builder h3{font-size:13px;letter-spacing:.18em;text-transform:uppercase;color:var(--dim);text-align:center}
+.slots{text-align:center;font-size:14px;margin-top:8px}
 .slots b{color:var(--cyan);font-variant-numeric:tabular-nums}
-.crow{display:flex;align-items:center;gap:10px;padding:9px 4px;border-bottom:1px solid #11161e}
+.crow{display:flex;align-items:center;gap:11px;padding:10px 4px;border-bottom:1px solid rgba(150,190,230,.07)}
 .crow:last-child{border-bottom:none}
-.crow .sw{width:22px;height:22px;border-radius:50%;flex:none}
-.crow.glow .sw{box-shadow:0 0 12px currentColor}
+.crow .sw{width:24px;height:24px;border-radius:50%;flex:none}
+.crow.glow .sw{box-shadow:0 0 14px currentColor}
 .crow .nm{flex:1;font-size:14px;font-weight:600}
 .crow .nm .gb{font-size:9.5px;font-weight:800;color:#2a1c00;background:var(--gold);border-radius:999px;padding:1.5px 7px;margin-left:6px;letter-spacing:.08em;vertical-align:2px}
-.qty{display:flex;align-items:center;gap:0}
-.qty button{width:34px;height:34px;border-radius:10px;border:1.5px solid var(--line);background:transparent;color:var(--cyan);font-size:19px;font-weight:700;cursor:pointer}
-.qty button:disabled{opacity:.25}
-.qty .q{width:30px;text-align:center;font-weight:800;font-variant-numeric:tabular-nums}
-.totalbar{margin-top:16px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 16px;display:flex;justify-content:space-between;align-items:center}
+.qty{display:flex;align-items:center}
+.qty button{width:36px;height:36px;border-radius:12px;border:1.5px solid var(--line);background:transparent;color:var(--cyan);font-size:20px;font-weight:700;cursor:pointer}
+.qty button:disabled{opacity:.22}
+.qty .q{width:32px;text-align:center;font-weight:800;font-variant-numeric:tabular-nums}
+.totalbar{margin-top:18px;background:var(--glass);border:1px solid var(--line);border-radius:16px;padding:14px 16px;display:flex;justify-content:space-between;align-items:center;backdrop-filter:blur(8px)}
 .totalbar .tl{font-size:13px;color:var(--dim)} .totalbar .tl b{display:block;color:var(--text);font-size:15px}
-.totalbar .tp{font-size:24px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
+.totalbar .tp{font-size:25px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
 .upnote{text-align:center;font-size:12.5px;color:var(--dim);margin-top:10px}
 .upnote b{color:var(--gold)}
-.sel-summary{text-align:center;color:var(--dim);font-size:13.5px;margin-top:12px;min-height:18px}
-/* PATENT / FAQ / BAR / FOOTER */
-.flag{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px}
-.flag .t{font-size:14px;color:var(--dim)} .flag .t b{color:var(--text);display:block;font-size:16px}
-details{border-bottom:1px solid var(--line);padding:14px 2px}
-summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;align-items:center}
-summary::after{content:"+";color:var(--cyan);font-size:20px;font-weight:400}
-details[open] summary::after{content:"–"}
-details p{color:var(--dim);font-size:14px;padding:10px 0 4px;max-width:60ch}
-.buybar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(8,11,16,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+.sel-summary{text-align:center;color:var(--dim);font-size:13px;margin-top:10px;min-height:18px}
+details.allcolors{margin-top:16px;border:1px solid var(--line);border-radius:16px}
+details.allcolors summary{padding:13px 16px;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:var(--dim);cursor:pointer}
+details.allcolors img{border-radius:0 0 15px 15px}
+/* ── TRUST ── */
+.trust .t{display:flex;gap:14px;align-items:center;padding:18px 2px;border-bottom:1px solid var(--line)}
+.trust .t:first-child{border-top:1px solid var(--line)}
+.trust .ic{font-size:22px;width:34px;text-align:center}
+.trust b{font-size:15px;display:block}
+.trust p{font-size:13px;color:var(--dim)}
+/* FAQ / BAR / FOOTER */
+details.faq{border-bottom:1px solid var(--line);padding:15px 2px}
+details.faq summary{cursor:pointer;font-weight:700;font-size:15px;display:flex;justify-content:space-between;align-items:center}
+details.faq summary::after{content:"+";color:var(--cyan);font-size:20px;font-weight:400}
+details.faq[open] summary::after{content:"–"}
+details.faq p{color:var(--dim);font-size:14px;padding:10px 0 4px;max-width:60ch}
+summary{list-style:none} summary::-webkit-details-marker{display:none}
+.buybar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(4,7,12,.9);backdrop-filter:blur(14px);border-top:1px solid var(--line);padding:10px 16px calc(10px + env(safe-area-inset-bottom))}
 .buybar .in{max-width:520px;margin:0 auto;display:flex;gap:12px;align-items:center}
 .buybar .info{flex:1;min-width:0}
 .buybar .info .l1{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
 .buybar .info .l2{font-size:11.5px;color:var(--dim);font-variant-numeric:tabular-nums}
-.buybar a{flex:none;background:var(--cta);color:var(--cta-ink);font-weight:800;text-transform:uppercase;font-size:14px;text-decoration:none;border-radius:11px;padding:12px 22px;box-shadow:0 0 18px rgba(62,233,255,.3)}
-body{padding-bottom:86px}
-footer{padding:26px 0 40px;text-align:center;color:#5c6875;font-size:11.5px}
+.buybar a{flex:none;background:var(--cta);color:var(--cta-ink);font-weight:800;text-transform:uppercase;font-size:14px;text-decoration:none;border-radius:999px;padding:13px 24px;box-shadow:0 0 20px rgba(62,233,255,.35)}
+body{padding-bottom:88px}
+footer{padding:28px 0 44px;text-align:center;color:var(--faint);font-size:11.5px}
 @media (prefers-reduced-motion: no-preference){
-  .hero h1{animation:glowin 1.2s ease-out}
-  @keyframes glowin{from{opacity:0}to{opacity:1;filter:drop-shadow(0 0 18px rgba(62,233,255,.35))}}
+  .stage img{animation:float 5.5s ease-in-out infinite}
+  @keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-14px)}}
+  .trio figure:nth-child(2) img{animation:float 6s ease-in-out infinite .4s}
+  .trio figure:nth-child(1) img,.trio figure:nth-child(3) img{animation:float 6.6s ease-in-out infinite .9s}
 }
 a:focus-visible,button:focus-visible,.offer:focus-visible,summary:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
 </style>
 </head>
 <body>
 
-<!-- HERO -->
+<!-- HERO — the product floats free -->
 <header class="hero">
-  <div class="img bleed"><img src="assets/hero-glow.jpg" alt="Three Thungy glow-in-the-dark toothbrushes glowing cyan, gold and violet in the dark" fetchpriority="high"></div>
-  <div class="wrap copy">
+  <div class="stage"><div class="halo"></div><img src="assets/cut/glow-cyan.png" alt="Thungy glow-in-the-dark toothbrush glowing cyan" fetchpriority="high"></div>
+  <div class="wrap">
+    <p class="eyebrow">Thungy Brush®</p>
     <h1 class="disp">Brush. Scrape.<br>Exfoliate.</h1>
     <p class="sub">One Brush Does It All.</p>
-    <p class="colors-line">Available in 11 Colors — <b>including Glow-in-the-Dark editions</b></p>
-    <p class="offer-line">4-Pack · $24.99 · FREE Shipping</p>
-    <div><span class="patent-chip">🇺🇸 <span>US Patent D901,901 S</span> · Patented 3-in-1 design</span></div>
+    <p class="line2">11 colors — <b>including Glow-in-the-Dark editions</b></p>
+    <p class="offer">4-Pack · $24.99 · Free Shipping</p>
+    <div class="chips"><span class="mini">🇺🇸 <b>US Patent D901,901&nbsp;S</b></span><span class="mini">Soft charcoal bristles</span></div>
     <a class="cta" href="#buy">Build Your 4-Pack ▸</a>
   </div>
 </header>
 
-<!-- SOCIAL PROOF -->
-<div class="proof">
+<!-- GLOW COLLECTION — the hero product -->
+<section class="glowsec">
   <div class="wrap">
-    <div class="stars">★★★★★</div>
-    <p>"Fresher breath, better kisses." — the Thungy promise.</p>
+    <p class="eyebrow" style="color:var(--cyan)">The Glow Collection</p>
+    <h2 class="disp">It glows.<br>They brush.</h2>
+    <div class="trio">
+      <figure class="p"><img src="assets/cut/glow-purple.png" alt="Glow brush — violet" loading="lazy"><figcaption>Violet</figcaption></figure>
+      <figure class="g"><img src="assets/cut/glow-gold.png" alt="Glow brush — gold" loading="lazy"><figcaption>Gold</figcaption></figure>
+      <figure class="c"><img src="assets/cut/glow-cyan.png" alt="Glow brush — cyan" loading="lazy"><figcaption>Cyan</figcaption></figure>
+    </div>
+    <span class="kids">Three glowing colors · Kids approved ♡</span>
+    <p class="why">Lights off, brush on. The glow editions turn the nightly battle into <b>the part of bedtime they ask for.</b></p>
+    <a class="cta" href="#buy">Get the Glow ▸</a>
   </div>
-</div>
+</section>
 
-<!-- HOW IT WORKS -->
+<!-- 3-IN-1 — typographic -->
 <section>
   <div class="wrap">
-    <p class="eyebrow">How it works</p>
-    <h2 class="disp">Three tools. One handle.</h2>
-    <div class="steps">
-      <div class="step"><div class="n">01</div><div class="t">Brush</div><p>Soft charcoal bristles clean teeth &amp; protect enamel</p></div>
-      <div class="step"><div class="n">02</div><div class="t">Scrape</div><p>Tongue scraper lifts the bacteria that cause bad breath</p></div>
-      <div class="step"><div class="n">03</div><div class="t">Exfoliate</div><p>Soft exfoliator refreshes your tongue's surface &amp; taste</p></div>
-    </div>
-    <figure class="shot"><img src="assets/three-in-one.jpg" alt="Thungy Brush 3-in-1 oral care system: toothbrush, tongue scraper, tongue exfoliator" loading="lazy"></figure>
+    <p class="eyebrow">Why it wins</p>
+    <h2 class="disp">Three tools.<br>One handle.</h2>
+    <div class="tool"><div class="no">01</div><div><h3>Brush</h3><p>Soft charcoal bristles clean teeth and protect gums and enamel.</p></div></div>
+    <div class="tool"><div class="no">02</div><div><h3>Scrape</h3><p>The built-in tongue scraper lifts the bacteria that cause bad breath.</p></div></div>
+    <div class="tool"><div class="no">03</div><div><h3>Exfoliate</h3><p>The soft exfoliator refreshes your tongue's surface — and your sense of taste.</p></div></div>
+    <p class="whyline">Fresher breath. Better kisses. Twenty extra seconds.</p>
   </div>
 </section>
 
-<!-- BENEFITS -->
-<section class="benefits">
+<!-- PRICE AS DESIGN -->
+<section class="pricesec">
   <div class="wrap">
-    <p class="eyebrow">Why Thungy</p>
-    <h2 class="disp">Fresher breath. <em>Better kisses.</em></h2>
-    <div class="blist">
-      <div class="b"><span class="dot"></span><div><b>Toothbrush + Tongue Scraper + Soft Exfoliator</b><p>The patented 3-in-1 design — one tool instead of three.</p></div></div>
-      <div class="b"><span class="dot"></span><div><b>Helps promote a healthier mouth</b><p>Soft charcoal bristles protect gums and enamel; the scraper removes odor-causing bacteria.</p></div></div>
-      <div class="b"><span class="dot"></span><div><b>11 colors — kids love them</b><p>Fun colors and the Glow-in-the-Dark collection make brushing the easy part of bedtime.</p></div></div>
-    </div>
-    <figure class="shot"><img src="assets/closeup.jpg" alt="Close-up of the Thungy exfoliating toothbrush and tongue scraper" loading="lazy"></figure>
+    <p class="eyebrow">The deal</p>
+    <div class="bigprice"><sup>$</sup>24<sup>99</sup></div>
+    <p class="pricemeta">4 brushes · any colors you want</p>
+    <p class="pricemath">That's <b>$6.25 a brush</b> — extra brushes just <b>$5 each</b> after your 4-pack.</p>
+    <div><span class="freeship">Free shipping</span></div>
+    <a class="cta" href="#buy">Mix Your Colors ▸</a>
   </div>
 </section>
 
-<!-- COMPARISON -->
-<section>
-  <div class="wrap">
-    <p class="eyebrow">The difference</p>
-    <h2 class="disp">Thungy vs. your old brush</h2>
-    <figure class="shot" style="margin-top:6px"><img src="assets/compare.jpg" alt="Comparison chart: Thungy Brush vs regular toothbrush" loading="lazy"></figure>
-  </div>
-</section>
-
-<!-- OFFERS + PACK BUILDER -->
-<section id="buy">
+<!-- OFFERS + BUILDER -->
+<section id="buy" style="padding-top:20px">
   <div class="wrap">
     <p class="eyebrow">Choose your offer</p>
     <h2 class="disp">Pick your pack</h2>
@@ -193,19 +206,19 @@ a:focus-visible,button:focus-visible,.offer:focus-visible,summary:focus-visible{
     <div class="offer primary sel" data-offer="pack" tabindex="0" role="radio" aria-checked="true">
       <span class="ribbon">⭐ BEST VALUE · MOST POPULAR</span>
       <div class="row"><span class="on">4 Thungy Brushes</span><span class="op">$24.99</span></div>
-      <p class="od"><b>FREE Shipping</b> · Mix &amp; match any 4 of the 11 colors · Great for families, gifts, or keeping extras on hand. <b>Add more for just $5 each.</b></p>
+      <p class="od"><b>FREE Shipping</b> · Mix &amp; match any of the 11 colors · Families, gifts, spares. <b>Add more for $5 each.</b></p>
     </div>
 
     <div class="offer" data-offer="single" tabindex="0" role="radio" aria-checked="false">
       <div class="row"><span class="on">1 Thungy Brush</span><span class="op">$6.99</span></div>
-      <p class="od">The try-it-first option · + $5 flat-rate shipping</p>
+      <p class="od">Try it first · + $5 flat-rate shipping</p>
     </div>
 
     <div class="builder">
-      <h3 id="builderTitle">Build your 4-pack — tap + on your colors</h3>
+      <h3 id="builderTitle">Build your pack — tap + on your colors</h3>
       <p class="slots" id="slots"></p>
       <div id="colorRows"></div>
-      <figure class="shot" style="margin-top:14px"><img src="assets/colors-glow-combo.jpg" alt="All eleven Thungy Brush colors and the glow-in-the-dark collection" loading="lazy"><figcaption>ALL ELEVEN COLORS · GLOW COLLECTION — THREE GLOWING COLORS · KIDS APPROVED ♡</figcaption></figure>
+      <details class="allcolors"><summary>See all eleven colors ▾</summary><img src="assets/colors-glow-combo.jpg" alt="All eleven Thungy Brush colors and the glow-in-the-dark collection" loading="lazy"></details>
       <div class="totalbar"><div class="tl">Your order<b id="orderLabel"></b></div><div class="tp" id="orderTotal"></div></div>
       <p class="upnote" id="upnote"></p>
       <a class="cta" id="buyBtn" href="#buy">Checkout ▸</a>
@@ -214,24 +227,27 @@ a:focus-visible,button:focus-visible,.offer:focus-visible,summary:focus-visible{
   </div>
 </section>
 
-<!-- PATENT / USA -->
-<section>
+<!-- TRUST -->
+<section style="padding-top:24px">
   <div class="wrap">
-    <div class="flag"><div style="font-size:34px">🏅</div><div class="t"><b>Patented. Invented in the USA.</b>US Patent No. D901,901 S — one handle, three tools, no substitutes.</div></div>
-    <figure class="shot"><img src="assets/patent.jpg" alt="Thungy Brush US patent graphic" loading="lazy"></figure>
+    <div class="trust">
+      <div class="t"><span class="ic">🏅</span><div><b>Patented — US Patent No. D901,901 S</b><p>One handle, three tools. Invented in the USA.</p></div></div>
+      <div class="t"><span class="ic">🪥</span><div><b>Soft, charcoal-infused bristles</b><p>Gentle on gums and enamel, naturally absorbs plaque.</p></div></div>
+      <div class="t"><span class="ic">💋</span><div><b>Fresher breath, better kisses</b><p>The tongue is where bad breath lives. Thungy goes there.</p></div></div>
+    </div>
   </div>
 </section>
 
 <!-- FAQ -->
-<section>
+<section style="padding-top:0">
   <div class="wrap">
     <p class="eyebrow">Questions</p>
     <h2 class="disp">Good to know</h2>
-    <details><summary>Are the bristles hard or soft?</summary><p>Soft. Every Thungy ships with soft charcoal-infused bristles — gentle on gums and enamel.</p></details>
-    <details><summary>How do I use the 3-in-1?</summary><p>Brush like normal, flip to scrape your tongue front-to-back, then finish with the soft exfoliator. About 20 extra seconds for a noticeably fresher mouth.</p></details>
-    <details><summary>Can I mix colors in a 4-pack?</summary><p>Yes — any mix of the 11 colors, including the Glow-in-the-Dark editions. That's the point.</p></details>
-    <details><summary>How does the glow work?</summary><p>The glow editions charge in everyday light and glow in the dark — full glow specs coming with the product details.</p></details>
-    <details><summary>Shipping?</summary><p>FREE shipping on 4-packs and larger. Single brushes ship for a $5 flat rate.</p></details>
+    <details class="faq"><summary>Can I mix colors in a 4-pack?</summary><p>Yes — any mix of the 11 colors, including the Glow-in-the-Dark editions. That's the point.</p></details>
+    <details class="faq"><summary>Are the bristles hard or soft?</summary><p>Soft. Every Thungy ships with soft charcoal-infused bristles — gentle on gums and enamel.</p></details>
+    <details class="faq"><summary>How do I use the 3-in-1?</summary><p>Brush like normal, flip to scrape your tongue front-to-back, then finish with the soft exfoliator. About 20 extra seconds.</p></details>
+    <details class="faq"><summary>How does the glow work?</summary><p>The glow editions charge in everyday light and glow in the dark — full glow specs coming with the product details.</p></details>
+    <details class="faq"><summary>Shipping?</summary><p>FREE shipping on 4-packs and larger. Single brushes ship for a $5 flat rate.</p></details>
   </div>
 </section>
 
@@ -247,20 +263,16 @@ a:focus-visible,button:focus-visible,.offer:focus-visible,summary:focus-visible{
 
 <script>
 // ── PRICING (approved Jul 13, chris+mickey) ────────────────────────────
-// 4-pack $24.99 free ship · +$5 per extra brush (5→$29.99 … 8→$44.99) · single $6.99 + $5 ship
 const PACK_BASE=24.99, PACK_MIN=4, PACK_MAX=8, EXTRA=5.00, SINGLE=6.99, SINGLE_SHIP=5.00;
-
-// ── CHECKOUT DROP-IN POINT (payment-agnostic — Jul 13: Wix Payments is the plan) ───────
-// Fill with Mickey's checkout URLs, one per order size: Wix product-page/checkout links
-// (or Stripe links if that ever changes — Stripe URLs also get the color mix appended
-// automatically as client_reference_id; Wix captures colors via its own product options,
-// so Mickey's Wix 4-pack product needs FOUR color dropdowns configured).
+// ── CHECKOUT DROP-IN POINT (payment-agnostic — Wix Payments planned) ───
+// Fill with Mickey's checkout URLs per order size. Wix captures colors via product options
+// (his 4-pack product needs FOUR color dropdowns). Stripe URLs would auto-carry the mix.
 const CHECKOUT = { "1":"", "4":"", "5":"", "6":"", "7":"", "8":"" };
 
 const COLORS=[
- ["glow-amber","Glow — Amber",true,"radial-gradient(circle at 35% 30%,#ffe9b0,#ffc832 60%,#7a5200)","#ffc832"],
- ["glow-pink","Glow — Pink",true,"radial-gradient(circle at 35% 30%,#ffd7ea,#ff5fa8 60%,#5c1035)","#ff5fa8"],
- ["glow-silver","Glow — Silver",true,"radial-gradient(circle at 35% 30%,#ffffff,#cfe6ef 55%,#5a707c)","#cfe6ef"],
+ ["glow-violet","Glow — Violet",true,"radial-gradient(circle at 35% 30%,#e6c8ff,#b46bff 60%,#3a1660)","#b46bff"],
+ ["glow-gold","Glow — Gold",true,"radial-gradient(circle at 35% 30%,#ffe9b0,#ffc832 60%,#7a5200)","#ffc832"],
+ ["glow-cyan","Glow — Cyan",true,"radial-gradient(circle at 35% 30%,#d8fbff,#3ee9ff 60%,#0a4a56)","#3ee9ff"],
  ["green-black","Green & Black",false,"linear-gradient(135deg,#8fd94a 50%,#111 50%)"],
  ["pink-white","Pink & White",false,"linear-gradient(135deg,#ff4f9a 50%,#f4f4f4 50%)"],
  ["black-white","Black & White",false,"linear-gradient(135deg,#171717 50%,#f4f4f4 50%)"],
@@ -270,9 +282,9 @@ const COLORS=[
  ["orange-white","Orange & White",false,"linear-gradient(135deg,#f07a1f 50%,#f4f4f4 50%)"],
  ["rosegold-black","Rose Gold & Black",false,"linear-gradient(135deg,#e8b4a4 50%,#171717 50%)"]
 ];
-let MODE="pack";                 // "pack" | "single"
+let MODE="pack";
 const qty=Object.fromEntries(COLORS.map(c=>[c[0],0]));
-qty["glow-amber"]=1;             // a glow brush starts the pack — glow leads everywhere
+qty["glow-cyan"]=1;   // the hero brush starts the pack
 
 const rows=document.getElementById("colorRows");
 COLORS.forEach(([id,name,glow,grad,gc])=>{
@@ -305,7 +317,7 @@ function paint(){
   const ready = MODE==="single" ? n===1 : n>=PACK_MIN;
   const url = CHECKOUT[MODE==="single"?"1":String(Math.min(Math.max(n,PACK_MIN),PACK_MAX))];
   const btn=document.getElementById("buyBtn"), bar=document.getElementById("barBtn"), note=document.getElementById("buyNote");
-  if(ready&&url){ const full=url.includes("stripe")?url+(url.includes("?")?"&":"?")+"client_reference_id="+encodeURIComponent(colorRef()):url; btn.href=full; bar.href=full; btn.textContent="Checkout ▸ "+money(t); note.textContent="Secure checkout · Apple Pay & all cards"; }
+  if(ready&&url){ const full=url.includes("stripe")?url+(url.includes("?")?"&":"?")+"client_reference_id="+encodeURIComponent(colorRef()):url; btn.href=full; bar.href=full; btn.textContent="Checkout ▸ "+money(t); note.textContent="Secure checkout · cards, PayPal & more"; }
   else if(!ready){ btn.href="#buy"; bar.href="#buy"; btn.textContent=MODE==="single"?"Pick your color":"Pick "+(PACK_MIN-n)+" more"; note.textContent=""; }
   else { btn.href="#buy"; bar.href="#buy"; btn.textContent="Coming Very Soon"; note.textContent="Checkout opens shortly — this is live inventory."; }
 }
@@ -316,7 +328,7 @@ rows.addEventListener("click",e=>{
 });
 document.querySelectorAll("[data-offer]").forEach(el=>{
   const f=()=>{ MODE=el.dataset.offer;
-    if(MODE==="single"){ const first=COLORS.find(c=>qty[c[0]]>0); COLORS.forEach(([id])=>qty[id]=0); qty[first?first[0]:"glow-amber"]=1; }
+    if(MODE==="single"){ const first=COLORS.find(c=>qty[c[0]]>0); COLORS.forEach(([id])=>qty[id]=0); qty[first?first[0]:"glow-cyan"]=1; }
     paint(); document.getElementById("builderTitle").scrollIntoView({behavior:"smooth",block:"center"}); };
   el.addEventListener("click",f); el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();f();}});
 });
