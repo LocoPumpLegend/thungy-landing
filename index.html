@@ -17,6 +17,7 @@
 *{margin:0;padding:0;box-sizing:border-box}
 html{scroll-behavior:smooth}
 body{background:var(--ink);color:var(--text);font-family:-apple-system,'Helvetica Neue',Segoe UI,Roboto,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+body::after{content:"";position:fixed;inset:0;z-index:99;pointer-events:none;opacity:.5;mix-blend-mode:overlay;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='140' height='140'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='2'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.05 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E")}
 body::before{content:"";position:fixed;inset:0;z-index:-1;background:
  radial-gradient(55% 38% at 20% 6%,rgba(62,233,255,.09),transparent 62%),
  radial-gradient(45% 32% at 88% 24%,rgba(180,107,255,.08),transparent 60%),
@@ -25,8 +26,8 @@ img{max-width:100%;display:block}
 .wrap{max-width:520px;margin:0 auto;padding:0 22px}
 .disp{font-family:'Avenir Next Condensed','Arial Narrow',-apple-system,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.015em;line-height:.98;text-wrap:balance}
 .eyebrow{font-size:11.5px;letter-spacing:.3em;text-transform:uppercase;color:var(--faint);font-weight:700}
-section{padding:64px 0}
-h2.disp{font-size:38px;margin:10px 0 14px}
+section{padding:72px 0}
+h2.disp{font-size:40px;margin:12px 0 16px}
 /* ── HERO: the product, floating ── */
 .hero{min-height:96svh;display:flex;flex-direction:column;justify-content:flex-end;position:relative;padding:24px 0 28px;text-align:center}
 .stage{position:relative;height:44svh;min-height:290px;display:flex;justify-content:center;align-items:center}
@@ -42,9 +43,24 @@ h2.disp{font-size:38px;margin:10px 0 14px}
 .chips{display:flex;justify-content:center;gap:8px;margin-top:14px;flex-wrap:wrap}
 .mini{font-size:11px;letter-spacing:.1em;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:6px 12px;text-transform:uppercase}
 .mini b{color:var(--gold)}
+/* TICKER */
+.ticker{border-top:1px solid var(--line);border-bottom:1px solid var(--line);overflow:hidden;padding:12px 0;background:rgba(160,200,255,.02)}
+.ticker .tk{display:flex;gap:0;white-space:nowrap;width:max-content;animation:tick 26s linear infinite}
+.ticker span{font-family:'Avenir Next Condensed','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;letter-spacing:.14em;font-size:13.5px;color:var(--dim);padding:0 18px}
+.ticker b{color:var(--cyan);font-weight:700}
+@keyframes tick{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@media (prefers-reduced-motion: reduce){.ticker .tk{animation:none}}
+/* SCROLL REVEALS */
+.rv{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.rv.in{opacity:1;transform:none}
+@media (prefers-reduced-motion: reduce){.rv{opacity:1;transform:none;transition:none}}
 /* CTA */
 .cta{display:block;text-align:center;background:var(--cta);color:var(--cta-ink);font-weight:800;font-size:17.5px;letter-spacing:.04em;text-transform:uppercase;text-decoration:none;border-radius:999px;padding:18px 20px;margin:20px auto 0;max-width:330px;box-shadow:0 0 34px rgba(62,233,255,.4),0 6px 18px rgba(0,0,0,.5)}
 .cta:active{transform:translateY(1px)}
+@media (prefers-reduced-motion: no-preference){
+  .cta.pulse{animation:pulse 2.6s ease-in-out infinite}
+  @keyframes pulse{0%,100%{box-shadow:0 0 34px rgba(62,233,255,.4),0 6px 18px rgba(0,0,0,.5)}50%{box-shadow:0 0 52px rgba(62,233,255,.62),0 6px 18px rgba(0,0,0,.5)}}
+}
 /* ── GLOW COLLECTION: the hero product ── */
 .glowsec{position:relative;text-align:center;padding:72px 0}
 .glowsec::before{content:"";position:absolute;inset:0;background:radial-gradient(80% 55% at 50% 45%,rgba(62,233,255,.06),transparent 70%)}
@@ -53,7 +69,10 @@ h2.disp{font-size:38px;margin:10px 0 14px}
 .trio img{width:100%;
  -webkit-mask-image:radial-gradient(75% 66% at 50% 48%,#000 55%,transparent 84%);
  mask-image:radial-gradient(75% 66% at 50% 48%,#000 55%,transparent 84%)}
-.trio figure::after{content:"";position:absolute;left:12%;right:12%;bottom:-10px;height:16px;border-radius:50%;background:radial-gradient(ellipse,rgba(120,200,255,.25),transparent 70%);filter:blur(4px)}
+.trio figure::after{content:"";position:absolute;left:8%;right:8%;bottom:-14px;height:22px;border-radius:50%;background:radial-gradient(ellipse,rgba(120,200,255,.35),transparent 70%);filter:blur(5px)}
+.trio .p::after{background:radial-gradient(ellipse,rgba(180,107,255,.4),transparent 70%)}
+.trio .g::after{background:radial-gradient(ellipse,rgba(255,200,50,.35),transparent 70%)}
+.trio .c::after{background:radial-gradient(ellipse,rgba(62,233,255,.4),transparent 70%)}
 .trio figcaption{font-size:11px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);margin-top:14px}
 .trio .p figcaption{color:var(--violet)} .trio .g figcaption{color:var(--gold)} .trio .c figcaption{color:var(--cyan)}
 .kids{display:inline-block;margin-top:18px;font-size:13px;font-weight:800;letter-spacing:.14em;color:#ff8fc6;text-transform:uppercase}
@@ -153,9 +172,15 @@ a:focus-visible,button:focus-visible,.offer:focus-visible,summary:focus-visible{
     <p class="line2">11 colors — <b>including Glow-in-the-Dark editions</b></p>
     <p class="offer">4-Pack · $24.99 · Free Shipping</p>
     <div class="chips"><span class="mini">🇺🇸 <b>US Patent D901,901&nbsp;S</b></span><span class="mini">Soft charcoal bristles</span></div>
-    <a class="cta" href="#buy">Build Your 4-Pack ▸</a>
+    <a class="cta pulse" href="#buy">Build Your 4-Pack ▸</a>
   </div>
 </header>
+
+<!-- BRAND TICKER -->
+<div class="ticker" aria-hidden="true"><div class="tk">
+  <span>Fresher breath <b>•</b></span><span>Better kisses <b>•</b></span><span>Glows in the dark <b>•</b></span><span>Patented 3-in-1 <b>•</b></span><span>11 colors <b>•</b></span><span>Kids approved ♡ <b>•</b></span>
+  <span>Fresher breath <b>•</b></span><span>Better kisses <b>•</b></span><span>Glows in the dark <b>•</b></span><span>Patented 3-in-1 <b>•</b></span><span>11 colors <b>•</b></span><span>Kids approved ♡ <b>•</b></span>
+</div></div>
 
 <!-- GLOW COLLECTION — the hero product -->
 <section class="glowsec">
@@ -333,6 +358,10 @@ document.querySelectorAll("[data-offer]").forEach(el=>{
   el.addEventListener("click",f); el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();f();}});
 });
 paint();
+// scroll reveals — sections rise gently into view
+document.querySelectorAll("section .wrap > *").forEach((el,i)=>{ el.classList.add("rv"); });
+const io=new IntersectionObserver(es=>es.forEach(e=>{ if(e.isIntersecting){ e.target.classList.add("in"); io.unobserve(e.target);} }),{threshold:.12});
+document.querySelectorAll(".rv").forEach(el=>io.observe(el));
 </script>
 </body>
 </html>
