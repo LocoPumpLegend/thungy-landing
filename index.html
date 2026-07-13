@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Thungy Brush® — Brush. Scrape. Exfoliate.</title>
+<meta name="description" content="The patented 3-in-1 toothbrush with tongue scraper and exfoliator. 4-Pack $24.99 with free shipping — mix &amp; match 11 colors, including Glow-in-the-Dark.">
+<style>
+/* ── Thungy Brush direct-response page. One job: convert TikTok taps into checkouts.
+   The product's superpower only exists in the dark — so the page lives there. ── */
+:root{
+  --ink:#06080c; --panel:#0c1016; --line:#1b2430;
+  --text:#eaf1f7; --dim:#93a1b0;
+  --cyan:#3ee9ff; --gold:#ffc832; --violet:#c86bff;
+  --cta:#3ee9ff; --cta-ink:#03191d;
+}
+*{margin:0;padding:0;box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{background:var(--ink);color:var(--text);font-family:-apple-system,'Helvetica Neue',Segoe UI,Roboto,sans-serif;line-height:1.55;-webkit-font-smoothing:antialiased}
+img{max-width:100%;display:block}
+.wrap{max-width:520px;margin:0 auto;padding:0 18px}
+.disp{font-family:'Avenir Next Condensed','Arial Narrow',-apple-system,sans-serif;font-weight:800;text-transform:uppercase;letter-spacing:.02em;line-height:1.04;text-wrap:balance}
+.eyebrow{font-size:12px;letter-spacing:.22em;text-transform:uppercase;color:var(--dim);font-weight:600}
+section{padding:44px 0}
+h2.disp{font-size:30px;margin-bottom:14px}
+/* HERO */
+.hero{position:relative;padding:0 0 40px}
+.hero .img{position:relative}
+.hero .img img{width:100%;border-radius:0 0 26px 26px}
+.hero .img::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,rgba(6,8,12,.15) 0%,rgba(6,8,12,0) 35%,rgba(6,8,12,.92) 96%);border-radius:0 0 26px 26px}
+.hero .copy{position:relative;margin-top:-64px;text-align:center;z-index:2}
+.hero h1{font-size:44px;background:linear-gradient(92deg,var(--cyan),#bff6ff 45%,var(--violet));-webkit-background-clip:text;background-clip:text;color:transparent;filter:drop-shadow(0 0 18px rgba(62,233,255,.35))}
+.hero .sub{font-size:19px;color:var(--text);font-weight:600;margin-top:10px}
+.hero .colors-line{margin-top:10px;color:var(--dim);font-size:14.5px}
+.hero .colors-line b{color:var(--gold)}
+.hero .offer-line{margin-top:8px;font-size:15px;font-weight:700;color:var(--cyan)}
+.patent-chip{display:inline-flex;align-items:center;gap:7px;margin-top:14px;font-size:12px;letter-spacing:.08em;color:var(--dim);border:1px solid var(--line);border-radius:999px;padding:7px 14px}
+.patent-chip span{color:var(--gold)}
+/* CTA */
+.cta{display:block;text-align:center;background:var(--cta);color:var(--cta-ink);font-weight:800;font-size:18px;letter-spacing:.03em;text-transform:uppercase;text-decoration:none;border-radius:14px;padding:17px 20px;margin:22px auto 0;max-width:340px;box-shadow:0 0 28px rgba(62,233,255,.35),0 4px 14px rgba(0,0,0,.5)}
+.cta:active{transform:translateY(1px)}
+/* SOCIAL PROOF */
+.proof{border-top:1px solid var(--line);border-bottom:1px solid var(--line);padding:20px 0;text-align:center}
+.stars{color:var(--gold);font-size:18px;letter-spacing:3px}
+.proof p{color:var(--dim);font-size:14.5px;max-width:44ch;margin:8px auto 0}
+/* STEPS */
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:18px}
+.step{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:16px 10px;text-align:center}
+.step .n{font-size:12px;color:var(--dim);letter-spacing:.18em}
+.step .t{font-family:'Avenir Next Condensed','Arial Narrow',sans-serif;font-weight:700;text-transform:uppercase;font-size:17px;margin-top:4px}
+.step:nth-child(1) .t{color:var(--cyan)} .step:nth-child(2) .t{color:var(--gold)} .step:nth-child(3) .t{color:var(--violet)}
+.step p{font-size:12.5px;color:var(--dim);margin-top:5px;line-height:1.4}
+/* BENEFITS */
+.benefits h2 em{font-style:normal;color:var(--violet)}
+.blist{display:flex;flex-direction:column;gap:12px;margin-top:16px}
+.b{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:15px 16px;display:flex;gap:12px;align-items:flex-start}
+.b .dot{flex:none;width:10px;height:10px;border-radius:50%;margin-top:7px}
+.b:nth-child(odd) .dot{background:var(--cyan);box-shadow:0 0 10px var(--cyan)}
+.b:nth-child(even) .dot{background:var(--gold);box-shadow:0 0 10px var(--gold)}
+.b b{display:block;font-size:15.5px}
+.b p{font-size:13.5px;color:var(--dim);line-height:1.45}
+figure.shot{margin-top:22px}
+figure.shot img{border-radius:18px;border:1px solid var(--line)}
+figure.shot figcaption{font-size:12px;color:var(--dim);text-align:center;margin-top:8px;letter-spacing:.06em}
+/* OFFERS */
+.offer{position:relative;border:1.5px solid var(--line);border-radius:20px;padding:20px 16px 18px;background:var(--panel);cursor:pointer}
+.offer+.offer{margin-top:14px}
+.offer.primary{border-color:var(--gold);box-shadow:0 0 24px rgba(255,200,50,.12)}
+.offer .ribbon{position:absolute;top:-11px;left:16px;background:var(--gold);color:#2a1c00;font-size:10.5px;font-weight:800;letter-spacing:.1em;border-radius:999px;padding:3px 11px}
+.offer.sel{border-color:var(--cyan);box-shadow:0 0 0 1.5px var(--cyan),0 0 20px rgba(62,233,255,.18)}
+.offer .row{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.offer .on{font-weight:800;font-size:17px}
+.offer .op{font-size:24px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums;white-space:nowrap}
+.offer .od{font-size:13px;color:var(--dim);margin-top:5px;line-height:1.45}
+.offer .od b{color:var(--cyan)}
+/* PACK BUILDER */
+.builder{margin-top:20px;border:1px solid var(--line);border-radius:20px;background:#080b10;padding:18px 14px}
+.builder h3{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:var(--dim);text-align:center}
+.slots{text-align:center;font-size:14px;margin-top:8px;color:var(--text)}
+.slots b{color:var(--cyan);font-variant-numeric:tabular-nums}
+.crow{display:flex;align-items:center;gap:10px;padding:9px 4px;border-bottom:1px solid #11161e}
+.crow:last-child{border-bottom:none}
+.crow .sw{width:22px;height:22px;border-radius:50%;flex:none}
+.crow.glow .sw{box-shadow:0 0 12px currentColor}
+.crow .nm{flex:1;font-size:14px;font-weight:600}
+.crow .nm .gb{font-size:9.5px;font-weight:800;color:#2a1c00;background:var(--gold);border-radius:999px;padding:1.5px 7px;margin-left:6px;letter-spacing:.08em;vertical-align:2px}
+.qty{display:flex;align-items:center;gap:0}
+.qty button{width:34px;height:34px;border-radius:10px;border:1.5px solid var(--line);background:transparent;color:var(--cyan);font-size:19px;font-weight:700;cursor:pointer}
+.qty button:disabled{opacity:.25}
+.qty .q{width:30px;text-align:center;font-weight:800;font-variant-numeric:tabular-nums}
+.totalbar{margin-top:16px;background:var(--panel);border:1px solid var(--line);border-radius:14px;padding:13px 16px;display:flex;justify-content:space-between;align-items:center}
+.totalbar .tl{font-size:13px;color:var(--dim)} .totalbar .tl b{display:block;color:var(--text);font-size:15px}
+.totalbar .tp{font-size:24px;font-weight:800;color:var(--gold);font-variant-numeric:tabular-nums}
+.upnote{text-align:center;font-size:12.5px;color:var(--dim);margin-top:10px}
+.upnote b{color:var(--gold)}
+.sel-summary{text-align:center;color:var(--dim);font-size:13.5px;margin-top:12px;min-height:18px}
+/* PATENT / FAQ / BAR / FOOTER */
+.flag{display:flex;gap:14px;align-items:center;background:var(--panel);border:1px solid var(--line);border-radius:18px;padding:18px}
+.flag .t{font-size:14px;color:var(--dim)} .flag .t b{color:var(--text);display:block;font-size:16px}
+details{border-bottom:1px solid var(--line);padding:14px 2px}
+summary{cursor:pointer;font-weight:700;font-size:15px;list-style:none;display:flex;justify-content:space-between;align-items:center}
+summary::after{content:"+";color:var(--cyan);font-size:20px;font-weight:400}
+details[open] summary::after{content:"–"}
+details p{color:var(--dim);font-size:14px;padding:10px 0 4px;max-width:60ch}
+.buybar{position:fixed;left:0;right:0;bottom:0;z-index:50;background:rgba(8,11,16,.92);backdrop-filter:blur(12px);border-top:1px solid var(--line);padding:10px 14px calc(10px + env(safe-area-inset-bottom))}
+.buybar .in{max-width:520px;margin:0 auto;display:flex;gap:12px;align-items:center}
+.buybar .info{flex:1;min-width:0}
+.buybar .info .l1{font-size:13px;font-weight:700;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.buybar .info .l2{font-size:11.5px;color:var(--dim);font-variant-numeric:tabular-nums}
+.buybar a{flex:none;background:var(--cta);color:var(--cta-ink);font-weight:800;text-transform:uppercase;font-size:14px;text-decoration:none;border-radius:11px;padding:12px 22px;box-shadow:0 0 18px rgba(62,233,255,.3)}
+body{padding-bottom:86px}
+footer{padding:26px 0 40px;text-align:center;color:#5c6875;font-size:11.5px}
+@media (prefers-reduced-motion: no-preference){
+  .hero h1{animation:glowin 1.2s ease-out}
+  @keyframes glowin{from{opacity:0}to{opacity:1;filter:drop-shadow(0 0 18px rgba(62,233,255,.35))}}
+}
+a:focus-visible,button:focus-visible,.offer:focus-visible,summary:focus-visible{outline:2px solid var(--cyan);outline-offset:2px}
+</style>
+</head>
+<body>
+
+<!-- HERO -->
+<header class="hero">
+  <div class="img"><img src="assets/hero-glow.jpg" alt="Three Thungy glow-in-the-dark toothbrushes glowing cyan, gold and violet in the dark" fetchpriority="high"></div>
+  <div class="wrap copy">
+    <h1 class="disp">Brush. Scrape.<br>Exfoliate.</h1>
+    <p class="sub">One Brush Does It All.</p>
+    <p class="colors-line">Available in 11 Colors — <b>including Glow-in-the-Dark editions</b></p>
+    <p class="offer-line">4-Pack · $24.99 · FREE Shipping</p>
+    <div><span class="patent-chip">🇺🇸 <span>US Patent D901,901 S</span> · Patented 3-in-1 design</span></div>
+    <a class="cta" href="#buy">Build Your 4-Pack ▸</a>
+  </div>
+</header>
+
+<!-- SOCIAL PROOF -->
+<div class="proof">
+  <div class="wrap">
+    <div class="stars">★★★★★</div>
+    <p>"Fresher breath, better kisses." — the Thungy promise.</p>
+  </div>
+</div>
+
+<!-- HOW IT WORKS -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">How it works</p>
+    <h2 class="disp">Three tools. One handle.</h2>
+    <div class="steps">
+      <div class="step"><div class="n">01</div><div class="t">Brush</div><p>Soft charcoal bristles clean teeth &amp; protect enamel</p></div>
+      <div class="step"><div class="n">02</div><div class="t">Scrape</div><p>Tongue scraper lifts the bacteria that cause bad breath</p></div>
+      <div class="step"><div class="n">03</div><div class="t">Exfoliate</div><p>Soft exfoliator refreshes your tongue's surface &amp; taste</p></div>
+    </div>
+    <figure class="shot"><img src="assets/three-in-one.jpg" alt="Thungy Brush 3-in-1 oral care system: toothbrush, tongue scraper, tongue exfoliator" loading="lazy"></figure>
+  </div>
+</section>
+
+<!-- BENEFITS -->
+<section class="benefits">
+  <div class="wrap">
+    <p class="eyebrow">Why Thungy</p>
+    <h2 class="disp">Fresher breath. <em>Better kisses.</em></h2>
+    <div class="blist">
+      <div class="b"><span class="dot"></span><div><b>Toothbrush + Tongue Scraper + Soft Exfoliator</b><p>The patented 3-in-1 design — one tool instead of three.</p></div></div>
+      <div class="b"><span class="dot"></span><div><b>Helps promote a healthier mouth</b><p>Soft charcoal bristles protect gums and enamel; the scraper removes odor-causing bacteria.</p></div></div>
+      <div class="b"><span class="dot"></span><div><b>11 colors — kids love them</b><p>Fun colors and the Glow-in-the-Dark collection make brushing the easy part of bedtime.</p></div></div>
+    </div>
+    <figure class="shot"><img src="assets/closeup.jpg" alt="Close-up of the Thungy exfoliating toothbrush and tongue scraper" loading="lazy"></figure>
+  </div>
+</section>
+
+<!-- COMPARISON -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">The difference</p>
+    <h2 class="disp">Thungy vs. your old brush</h2>
+    <figure class="shot" style="margin-top:6px"><img src="assets/compare.jpg" alt="Comparison chart: Thungy Brush vs regular toothbrush" loading="lazy"></figure>
+  </div>
+</section>
+
+<!-- OFFERS + PACK BUILDER -->
+<section id="buy">
+  <div class="wrap">
+    <p class="eyebrow">Choose your offer</p>
+    <h2 class="disp">Pick your pack</h2>
+
+    <div class="offer primary sel" data-offer="pack" tabindex="0" role="radio" aria-checked="true">
+      <span class="ribbon">⭐ BEST VALUE · MOST POPULAR</span>
+      <div class="row"><span class="on">4 Thungy Brushes</span><span class="op">$24.99</span></div>
+      <p class="od"><b>FREE Shipping</b> · Mix &amp; match any 4 of the 11 colors · Great for families, gifts, or keeping extras on hand. <b>Add more for just $5 each.</b></p>
+    </div>
+
+    <div class="offer" data-offer="single" tabindex="0" role="radio" aria-checked="false">
+      <div class="row"><span class="on">1 Thungy Brush</span><span class="op">$6.99</span></div>
+      <p class="od">The try-it-first option · + $5 flat-rate shipping</p>
+    </div>
+
+    <div class="builder">
+      <h3 id="builderTitle">Build your 4-pack — tap + on your colors</h3>
+      <p class="slots" id="slots"></p>
+      <div id="colorRows"></div>
+      <figure class="shot" style="margin-top:14px"><img src="assets/colors-glow-combo.jpg" alt="All eleven Thungy Brush colors and the glow-in-the-dark collection" loading="lazy"><figcaption>ALL ELEVEN COLORS · GLOW COLLECTION — THREE GLOWING COLORS · KIDS APPROVED ♡</figcaption></figure>
+      <div class="totalbar"><div class="tl">Your order<b id="orderLabel"></b></div><div class="tp" id="orderTotal"></div></div>
+      <p class="upnote" id="upnote"></p>
+      <a class="cta" id="buyBtn" href="#buy">Checkout ▸</a>
+      <p class="sel-summary" id="buyNote"></p>
+    </div>
+  </div>
+</section>
+
+<!-- PATENT / USA -->
+<section>
+  <div class="wrap">
+    <div class="flag"><div style="font-size:34px">🏅</div><div class="t"><b>Patented. Invented in the USA.</b>US Patent No. D901,901 S — one handle, three tools, no substitutes.</div></div>
+    <figure class="shot"><img src="assets/patent.jpg" alt="Thungy Brush US patent graphic" loading="lazy"></figure>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section>
+  <div class="wrap">
+    <p class="eyebrow">Questions</p>
+    <h2 class="disp">Good to know</h2>
+    <details><summary>Are the bristles hard or soft?</summary><p>Soft. Every Thungy ships with soft charcoal-infused bristles — gentle on gums and enamel.</p></details>
+    <details><summary>How do I use the 3-in-1?</summary><p>Brush like normal, flip to scrape your tongue front-to-back, then finish with the soft exfoliator. About 20 extra seconds for a noticeably fresher mouth.</p></details>
+    <details><summary>Can I mix colors in a 4-pack?</summary><p>Yes — any mix of the 11 colors, including the Glow-in-the-Dark editions. That's the point.</p></details>
+    <details><summary>How does the glow work?</summary><p>The glow editions charge in everyday light and glow in the dark — full glow specs coming with the product details.</p></details>
+    <details><summary>Shipping?</summary><p>FREE shipping on 4-packs and larger. Single brushes ship for a $5 flat rate.</p></details>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">Thungy Brush® · US Patent No. D901,901 S<br>© 2026 Thungy Brush. All rights reserved.</div>
+</footer>
+
+<!-- STICKY BUY BAR -->
+<div class="buybar"><div class="in">
+  <div class="info"><div class="l1" id="barSel"></div><div class="l2" id="barSub"></div></div>
+  <a href="#buy" id="barBtn">Buy&nbsp;Now</a>
+</div></div>
+
+<script>
+// ── PRICING (approved Jul 13, chris+mickey) ────────────────────────────
+// 4-pack $24.99 free ship · +$5 per extra brush (5→$29.99 … 8→$44.99) · single $6.99 + $5 ship
+const PACK_BASE=24.99, PACK_MIN=4, PACK_MAX=8, EXTRA=5.00, SINGLE=6.99, SINGLE_SHIP=5.00;
+
+// ── CHECKOUT DROP-IN POINT (payment-agnostic — Jul 13: Wix Payments is the plan) ───────
+// Fill with Mickey's checkout URLs, one per order size: Wix product-page/checkout links
+// (or Stripe links if that ever changes — Stripe URLs also get the color mix appended
+// automatically as client_reference_id; Wix captures colors via its own product options,
+// so Mickey's Wix 4-pack product needs FOUR color dropdowns configured).
+const CHECKOUT = { "1":"", "4":"", "5":"", "6":"", "7":"", "8":"" };
+
+const COLORS=[
+ ["glow-amber","Glow — Amber",true,"radial-gradient(circle at 35% 30%,#ffe9b0,#ffc832 60%,#7a5200)","#ffc832"],
+ ["glow-pink","Glow — Pink",true,"radial-gradient(circle at 35% 30%,#ffd7ea,#ff5fa8 60%,#5c1035)","#ff5fa8"],
+ ["glow-silver","Glow — Silver",true,"radial-gradient(circle at 35% 30%,#ffffff,#cfe6ef 55%,#5a707c)","#cfe6ef"],
+ ["green-black","Green & Black",false,"linear-gradient(135deg,#8fd94a 50%,#111 50%)"],
+ ["pink-white","Pink & White",false,"linear-gradient(135deg,#ff4f9a 50%,#f4f4f4 50%)"],
+ ["black-white","Black & White",false,"linear-gradient(135deg,#171717 50%,#f4f4f4 50%)"],
+ ["black-gold","Black & Gold",false,"linear-gradient(135deg,#171717 50%,#d9a52e 50%)"],
+ ["rose-gold","Rose Gold",false,"linear-gradient(135deg,#e8b4a4,#c98276)"],
+ ["teal-white","Teal & White",false,"linear-gradient(135deg,#2fa8a8 50%,#f4f4f4 50%)"],
+ ["orange-white","Orange & White",false,"linear-gradient(135deg,#f07a1f 50%,#f4f4f4 50%)"],
+ ["rosegold-black","Rose Gold & Black",false,"linear-gradient(135deg,#e8b4a4 50%,#171717 50%)"]
+];
+let MODE="pack";                 // "pack" | "single"
+const qty=Object.fromEntries(COLORS.map(c=>[c[0],0]));
+qty["glow-amber"]=1;             // a glow brush starts the pack — glow leads everywhere
+
+const rows=document.getElementById("colorRows");
+COLORS.forEach(([id,name,glow,grad,gc])=>{
+  const r=document.createElement("div"); r.className="crow"+(glow?" glow":""); if(glow&&gc)r.style.color=gc;
+  r.innerHTML=`<span class="sw" style="background:${grad}"></span><span class="nm">${name}${glow?'<span class="gb">GLOWS</span>':''}</span>
+   <span class="qty"><button type="button" aria-label="fewer ${name}" data-m="${id}">−</button><span class="q" id="q-${id}">0</span><button type="button" aria-label="more ${name}" data-a="${id}">+</button></span>`;
+  rows.appendChild(r);
+});
+const count=()=>Object.values(qty).reduce((a,b)=>a+b,0);
+const money=n=>"$"+n.toFixed(2);
+function total(){ if(MODE==="single") return SINGLE; const n=count(); return PACK_BASE+Math.max(0,n-PACK_MIN)*EXTRA; }
+function colorRef(){ return COLORS.filter(c=>qty[c[0]]>0).map(c=>qty[c[0]]+"x"+c[0]).join("_").slice(0,190); }
+function paint(){
+  document.querySelectorAll("[data-offer]").forEach(el=>{const on=el.dataset.offer===MODE; el.classList.toggle("sel",on); el.setAttribute("aria-checked",on);});
+  COLORS.forEach(([id])=>{ document.getElementById("q-"+id).textContent=qty[id]; });
+  const n=count(), max=MODE==="single"?1:PACK_MAX;
+  document.querySelectorAll("[data-a]").forEach(b=>b.disabled=n>=max);
+  document.querySelectorAll("[data-m]").forEach(b=>b.disabled=qty[b.dataset.m]<=0);
+  document.getElementById("builderTitle").textContent = MODE==="single" ? "Pick your 1 color" : "Build your pack — tap + on your colors";
+  const slots=document.getElementById("slots");
+  if(MODE==="single") slots.innerHTML = n<1 ? "Pick <b>1</b> color" : "Color picked ✓";
+  else slots.innerHTML = n<PACK_MIN ? `<b>${n}</b> of <b>${PACK_MIN}</b> picked — ${PACK_MIN-n} to go` : n===PACK_MIN ? `<b>4 of 4</b> picked ✓ — add up to ${PACK_MAX-PACK_MIN} more for $5 each` : `<b>${n} brushes</b> — nice haul ✓`;
+  const t=total();
+  const label = MODE==="single" ? "1 Thungy Brush" : `${Math.max(n,PACK_MIN)} Thungy Brushes`;
+  document.getElementById("orderLabel").textContent = label + (MODE==="single" ? " · + $5 shipping" : " · FREE shipping");
+  document.getElementById("orderTotal").textContent = money(t);
+  document.getElementById("upnote").innerHTML = MODE==="pack" ? `5 for ${money(29.99)} · 6 for ${money(34.99)} · 7 for ${money(39.99)} · 8 for ${money(44.99)} — <b>$5 each after your 4-pack</b>` : "";
+  document.getElementById("barSel").textContent=label;
+  document.getElementById("barSub").textContent = money(t) + (MODE==="single" ? " + $5 ship" : " · free ship");
+  const ready = MODE==="single" ? n===1 : n>=PACK_MIN;
+  const url = CHECKOUT[MODE==="single"?"1":String(Math.min(Math.max(n,PACK_MIN),PACK_MAX))];
+  const btn=document.getElementById("buyBtn"), bar=document.getElementById("barBtn"), note=document.getElementById("buyNote");
+  if(ready&&url){ const full=url.includes("stripe")?url+(url.includes("?")?"&":"?")+"client_reference_id="+encodeURIComponent(colorRef()):url; btn.href=full; bar.href=full; btn.textContent="Checkout ▸ "+money(t); note.textContent="Secure checkout · Apple Pay & all cards"; }
+  else if(!ready){ btn.href="#buy"; bar.href="#buy"; btn.textContent=MODE==="single"?"Pick your color":"Pick "+(PACK_MIN-n)+" more"; note.textContent=""; }
+  else { btn.href="#buy"; bar.href="#buy"; btn.textContent="Coming Very Soon"; note.textContent="Checkout opens shortly — this is live inventory."; }
+}
+rows.addEventListener("click",e=>{
+  const a=e.target.dataset&&e.target.dataset.a, m=e.target.dataset&&e.target.dataset.m;
+  if(a){ if(MODE==="single"){ COLORS.forEach(([id])=>qty[id]=0); qty[a]=1; } else if(count()<PACK_MAX) qty[a]++; paint(); }
+  if(m&&qty[m]>0){ qty[m]--; paint(); }
+});
+document.querySelectorAll("[data-offer]").forEach(el=>{
+  const f=()=>{ MODE=el.dataset.offer;
+    if(MODE==="single"){ const first=COLORS.find(c=>qty[c[0]]>0); COLORS.forEach(([id])=>qty[id]=0); qty[first?first[0]:"glow-amber"]=1; }
+    paint(); document.getElementById("builderTitle").scrollIntoView({behavior:"smooth",block:"center"}); };
+  el.addEventListener("click",f); el.addEventListener("keydown",e=>{if(e.key==="Enter"||e.key===" "){e.preventDefault();f();}});
+});
+paint();
+</script>
+</body>
+</html>
