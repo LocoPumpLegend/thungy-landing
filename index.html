@@ -279,10 +279,33 @@ a:focus-visible,button:focus-visible,.offer:focus-visible,summary:focus-visible{
 <script>
 // ── PRICING (approved Jul 13, chris+mickey) ────────────────────────────
 const PACK_BASE=24.99, PACK_MIN=4, PACK_MAX=8, EXTRA=5.00, SINGLE=6.99, SINGLE_SHIP=5.00;
-// ── CHECKOUT DROP-IN POINT (payment-agnostic — Wix Payments planned) ───
-// Fill with Mickey's checkout URLs per order size. Wix captures colors via product options
-// (his 4-pack product needs FOUR color dropdowns). Stripe URLs would auto-carry the mix.
-const CHECKOUT = { "1":"", "4":"", "5":"", "6":"", "7":"", "8":"" };
+// ── CHECKOUT: Shopify cart permalinks on Mickey's store (wired Oct 10 2026) ──────
+// thungy.com/cart/<variantId>:<qty>,<variantId>:<qty>  opens a cart with the exact mix.
+// SHOP_VARIANTS maps each page color to a Shopify variant id from thungy.com/products.json.
+// A color with no id is shown as "coming soon" and cannot be added. Fill the three glow
+// ids once Mickey says which of his Purple / Gray / Peach listings is which glow.
+// DISCOUNT: a Shopify discount code applied to every pack cart (""= none, store prices rule).
+const SHOP = "https://thungy.com";
+const DISCOUNT = "";
+const SHOP_VARIANTS = {
+  "green-black":   "57568265109670",   // store: Green
+  "orange-white":  "57568265142438",   // store: Orange
+  "pink-white":    "57568265175206",   // store: Pink
+  "teal-white":    "57568265207974",   // store: Blue   (store photo teal_and_white)
+  "black-white":   "57568265240742",   // store: White  (store photo white_and_black)
+  "bubblegum-glow": "",                // store: Purple / Gray / Peach — Mickey to confirm
+  "bumblebee-glow": "",                // store: Purple / Gray / Peach — Mickey to confirm
+  "skyblue-glow":   "",                // store: Purple / Gray / Peach — Mickey to confirm
+  "black-gold":    "",                 // not in the store yet
+  "rose-gold":     "",                 // not in the store yet
+  "rosegold-black": ""                 // not in the store yet
+};
+const canBuy = id => !!SHOP_VARIANTS[id];
+function cartUrl(){
+  const items = COLORS.filter(c=>qty[c[0]]>0 && canBuy(c[0])).map(c=>SHOP_VARIANTS[c[0]]+":"+qty[c[0]]);
+  if(!items.length) return "";
+  return SHOP+"/cart/"+items.join(",")+(DISCOUNT?"?discount="+encodeURIComponent(DISCOUNT):"");
+}
 
 const COLORS=[
  ["bubblegum-glow","Bubble Gum Glow",true,"radial-gradient(circle at 35% 30%,#ffd7ea,#ff7fc0 60%,#6b2148)","#ff7fc0"],
@@ -299,13 +322,14 @@ const COLORS=[
 ];
 let MODE="pack";
 const qty=Object.fromEntries(COLORS.map(c=>[c[0],0]));
-qty["skyblue-glow"]=1;   // the hero brush starts the pack
+qty[canBuy("skyblue-glow")?"skyblue-glow":"green-black"]=1;   // the hero brush starts the pack when the store can sell it
 
 const rows=document.getElementById("colorRows");
 COLORS.forEach(([id,name,glow,grad,gc])=>{
   const r=document.createElement("div"); r.className="crow"+(glow?" glow":""); if(glow&&gc)r.style.color=gc;
-  r.innerHTML=`<span class="sw" style="background:${grad}"></span><span class="nm">${name}${glow?'<span class="gb">GLOWS</span>':''}</span>
-   <span class="qty"><button type="button" aria-label="fewer ${name}" data-m="${id}">−</button><span class="q" id="q-${id}">0</span><button type="button" aria-label="more ${name}" data-a="${id}">+</button></span>`;
+  const soon = !canBuy(id);
+  r.innerHTML=`<span class="sw" style="background:${grad}"></span><span class="nm">${name}${glow?'<span class="gb">GLOWS</span>':''}${soon?'<span class="gb" style="opacity:.6">SOON</span>':''}</span>
+   <span class="qty"><button type="button" aria-label="fewer ${name}" data-m="${id}">−</button><span class="q" id="q-${id}">0</span><button type="button" aria-label="more ${name}" data-a="${id}" ${soon?'disabled data-soon="1"':''}>+</button></span>`;
   rows.appendChild(r);
 });
 const count=()=>Object.values(qty).reduce((a,b)=>a+b,0);
@@ -316,7 +340,7 @@ function paint(){
   document.querySelectorAll("[data-offer]").forEach(el=>{const on=el.dataset.offer===MODE; el.classList.toggle("sel",on); el.setAttribute("aria-checked",on);});
   COLORS.forEach(([id])=>{ document.getElementById("q-"+id).textContent=qty[id]; });
   const n=count(), max=MODE==="single"?1:PACK_MAX;
-  document.querySelectorAll("[data-a]").forEach(b=>b.disabled=n>=max);
+  document.querySelectorAll("[data-a]").forEach(b=>b.disabled=(MODE!=="single"&&n>=max)||b.dataset.soon==="1");   // single mode: tapping another color swaps it
   document.querySelectorAll("[data-m]").forEach(b=>b.disabled=qty[b.dataset.m]<=0);
   document.getElementById("builderTitle").textContent = MODE==="single" ? "Pick your 1 color" : "Build your pack — tap + on your colors";
   const slots=document.getElementById("slots");
@@ -330,9 +354,9 @@ function paint(){
   document.getElementById("barSel").textContent=label;
   document.getElementById("barSub").textContent = money(t) + (MODE==="single" ? " + $5 ship" : " · free ship");
   const ready = MODE==="single" ? n===1 : n>=PACK_MIN;
-  const url = CHECKOUT[MODE==="single"?"1":String(Math.min(Math.max(n,PACK_MIN),PACK_MAX))];
+  const url = cartUrl();
   const btn=document.getElementById("buyBtn"), bar=document.getElementById("barBtn"), note=document.getElementById("buyNote");
-  if(ready&&url){ const full=url.includes("stripe")?url+(url.includes("?")?"&":"?")+"client_reference_id="+encodeURIComponent(colorRef()):url; btn.href=full; bar.href=full; btn.textContent="Checkout ▸ "+money(t); note.textContent="Secure checkout · cards, PayPal & more"; }
+  if(ready&&url){ btn.href=url; bar.href=url; btn.textContent="Checkout ▸ "+money(t); note.textContent="Secure Shopify checkout on thungy.com · cards, PayPal & more"; }
   else if(!ready){ btn.href="#buy"; bar.href="#buy"; btn.textContent=MODE==="single"?"Pick your color":"Pick "+(PACK_MIN-n)+" more"; note.textContent=""; }
   else { btn.href="#buy"; bar.href="#buy"; btn.textContent="Coming Very Soon"; note.textContent="Checkout opens shortly — this is live inventory."; }
 }
